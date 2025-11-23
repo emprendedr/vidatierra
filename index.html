@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vida a Tierra - Bienestar & Oportunidad</title>
+
+<style>
+/* -------------------------------------------
+   ESTILOS GLOBALES 
+--------------------------------------------*/
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #0b0c10;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+section { position: relative; }
+
+/* PARALLAX */
+.parallax-bg {
+    background-image: url('https://images.unsplash.com/photo-1525097487452-6278ff080c31?q=80');
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.7);
+}
+
+/* Glass efecto premium */
+.glass-card {
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 900px;
+    box-shadow: 0 0 30px rgb(255 255 255 / 0.08);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* -------------------------------------------
+   HERO
+--------------------------------------------*/
+.hero {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+}
+
+.title-animated {
+    font-size: 55px;
+    font-weight: 800;
+    text-shadow: 0 0 15px #32ff89;
+    animation: glow 4s infinite ease-in-out;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 15px #32ff89; }
+    50% { text-shadow: 0 0 35px #32ff89; }
+    100% { text-shadow: 0 0 15px #32ff89; }
+}
+
+.subtitle {
+    font-size: 22px;
+    margin-top: 10px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+/* -------------------------------------------
+   REVEAL ANIMATIONS
+--------------------------------------------*/
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all .9s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* -------------------------------------------
+   GALERÍA
+--------------------------------------------*/
+.gallery img {
+    width: 100%;
+    border-radius: 20px;
+    transition: 0.4s;
+}
+
+.gallery img:hover {
+    transform: translateY(-8px) scale(1.05);
+}
+
+/* -------------------------------------------
+   BOTONES
+--------------------------------------------*/
+.btn {
+    background: linear-gradient(135deg, #41ff76, #1ec84d);
+    padding: 18px 35px;
+    border-radius: 40px;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin: 10px;
+    transition: .3s;
+}
+.btn:hover { transform: scale(1.07); }
+
+/* -------------------------------------------
+   SECCIÓN REFERIDOS
+--------------------------------------------*/
+.ref-panel {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+.ref-panel input {
+    width: 95%;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    margin: 10px 0;
+    border: none;
+}
+
+.ref-panel button {
+    width: 95%;
+    padding: 15px;
+    background: #32ff84;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.ref-result {
+    margin-top: 15px;
+    font-size: 18px;
+    word-break: break-all;
+    color: #9cffc8;
+}
+
+/* FOOTER */
+footer {
+    padding: 40px;
+    text-align: center;
+    background: #050505;
+    margin-top: 60px;
+}
+
+/* -------------------------------------------
+   OPTIMIZACIÓN MÓVIL
+--------------------------------------------*/
+@media (max-width: 768px) {
+    .title-animated { font-size: 42px; }
+    .subtitle { font-size: 18px; }
+}
+
+</style>
+</head>
+<body>
+
+<div class="parallax-bg"></div>
+
+<!-- HERO -->
+<div class="hero">
+    <h1 class="title-animated">VIDA A TIERRA</h1>
+    <p class="subtitle">Relajación • Energía Natural • Bienestar</p>
+</div>
+
+
+<!-- VIDEO SEGURO -->
+<div class="glass-card reveal">
+    <h2>Video de Presentación Seguro</h2>
+    <video id="secureVideo" width="100%" controls></video>
+</div>
+
+
+<!-- CÓMO FUNCIONA VIDA A TIERRA -->
+<section class="glass-card reveal">
+    <h2>¿Cómo Funciona el Sistema Vida a Tierra?</h2>
+    <p>Vida a Tierra combina tecnología terapéutica con beneficios naturales del Grounding para ofrecer relajación profunda, alivio del dolor y mejora en el sueño.  
+    Además, nuestro sistema de referidos te permite ganar dinero de manera sencilla:</p>
+
+    <ul style="text-align:left; max-width:700px; margin:auto; font-size:20px; line-height:1.7;">
+        <li>1️⃣ Comparte tu enlace único.</li>
+        <li>2️⃣ La persona agenda su sesión de 45 minutos.</li>
+        <li>3️⃣ Tú ganas <strong>$50 o más por cada referencia confirmada</strong>.</li>
+        <li>4️⃣ Todo el proceso es automatizado.</li>
+    </ul>
+</section>
+
+
+<!-- GALERÍA -->
+<section class="reveal">
+    <h2 style="text-align:center;">Productos Vida a Tierra</h2>
+    <div class="gallery" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:25px; padding:40px;">
+        <img src="https://via.placeholder.com/500x350?text=Heating+Pad">
+        <img src="https://via.placeholder.com/500x350?text=Colchoneta+Terapéutica">
+        <img src="https://via.placeholder.com/500x350?text=Almohada+Bioenergética">
+    </div>
+</section>
+
+
+<!-- BOTONES -->
+<div style="text-align:center;" class="reveal">
+    <a class="btn" href="https://wa.link/emv45g" target="_blank">WhatsApp Directo</a>
+    <a class="btn" href="https://t.me/" target="_blank">Unirme a Telegram</a>
+    <a class="btn" href="#" target="_blank">Comprar con PayPal</a>
+</div>
+
+
+<!-- PANEL DE REFERIDOS -->
+<section class="glass-card reveal">
+    <h2>Generador de Enlace de Referido</h2>
+    <p>Ingresa tu nombre o ID para crear tu enlace personal y empezar a generar ingresos.</p>
+
+    <div class="ref-panel">
+        <input id="refInput" type="text" placeholder="Escribe tu ID o Nombre">
+        <button onclick="generarRef()">Generar mi Enlace</button>
+        <div id="refResult" class="ref-result"></div>
+    </div>
+</section>
+
+
+<!-- MEMBRESÍA -->
+<section class="glass-card reveal">
+    <h2>Únete a la Comunidad Vida a Tierra</h2>
+    <p>Recibe guías exclusivas, sesiones privadas y nuevas oportunidades de crecimiento.</p>
+
+    <div class="ref-panel">
+        <input type="text" placeholder="Tu nombre completo">
+        <input type="email" placeholder="Tu correo electrónico">
+        <button>Registrarme</button>
+    </div>
+</section>
+
+
+<footer>
+    © 2025 Vida a Tierra – Conexión Natural, Bienestar y Abundancia.
+</footer>
+
+
+<script>
+/* VIDEO ENCRIPTADO (SIMULADO) */
+async function loadSecureVideo() {
+    const response = await fetch("video-protegido.mp4");
+    const blob = await response.blob();
+    document.getElementById("secureVideo").src = URL.createObjectURL(blob);
+}
+loadSecureVideo();
+
+/* REVEAL ANIMATIONS */
+window.addEventListener("scroll", reveal);
+function reveal() {
+    let reveals = document.querySelectorAll(".reveal");
+    for (let r of reveals) {
+        let windowHeight = window.innerHeight;
+        let elementTop = r.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) r.classList.add("active");
+    }
+}
+
+/* GENERADOR DE REFERIDOS */
+function generarRef() {
+    const val = document.getElementById("refInput").value.trim();
+    if (!val) return alert("Escribe tu ID o Nombre.");
+
+    const enlace = `https://vidaatierrabienestar.com/ref/${encodeURIComponent(val)}`;
+    document.getElementById("refResult").innerHTML =
+        `Tu enlace de referido es:<br><strong>${enlace}</strong>`;
+}
+</script>
+
+</body>
+</html>
