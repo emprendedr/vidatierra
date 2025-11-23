@@ -41,11 +41,18 @@ h1, h2, h3 {
 h2 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
+    color: #32ff89;
     background: linear-gradient(135deg, #32ff89, #1ec84d);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: fadeInScale 1s ease-out;
+}
+
+@supports not (background-clip: text) {
+    h2 {
+        color: #32ff89;
+    }
 }
 
 @keyframes fadeInScale {
@@ -138,14 +145,21 @@ h2 {
     font-size: 4rem;
     font-weight: 900;
     font-family: "Playfair Display", serif;
+    color: #32ff89;
     background: linear-gradient(135deg, #32ff89 0%, #1ec84d 50%, #32ff89 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: gradientShift 3s ease infinite, floatAnimation 3s ease-in-out infinite;
-    text-shadow: 0 0 30px rgba(50, 255, 137, 0.5);
     letter-spacing: 3px;
+}
+
+@supports not (background-clip: text) {
+    .title-animated {
+        color: #32ff89;
+        text-shadow: 0 0 30px rgba(50, 255, 137, 0.5);
+    }
 }
 
 @keyframes gradientShift {
@@ -251,6 +265,11 @@ h2 {
     transform: translateY(0) scale(1);
 }
 
+.btn:focus {
+    outline: 3px solid #32ff89;
+    outline-offset: 3px;
+}
+
 /* -------------------------------------------
    SECCIÓN REFERIDOS
 --------------------------------------------*/
@@ -333,7 +352,8 @@ input[type="email"] {
 
 input[type="text"]:focus,
 input[type="email"]:focus {
-    outline: none;
+    outline: 2px solid #32ff89;
+    outline-offset: 2px;
     border-color: #32ff89;
     background: rgba(255, 255, 255, 0.15);
     box-shadow: 0 0 15px rgba(50, 255, 137, 0.3);
