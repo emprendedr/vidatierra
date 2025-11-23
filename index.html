@@ -5,41 +5,122 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vida a Tierra - Bienestar & Oportunidad</title>
 
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
 <style>
 /* -------------------------------------------
    ESTILOS GLOBALES 
 --------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: "Poppins", sans-serif;
-    background: #0b0c10;
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
     color: #fff;
     overflow-x: hidden;
+    line-height: 1.6;
 }
 
-section { position: relative; }
+section { 
+    position: relative;
+}
+
+h1, h2, h3 {
+    font-family: "Playfair Display", serif;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #32ff89, #1ec84d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeInScale 1s ease-out;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 
 /* PARALLAX */
 .parallax-bg {
-    background-image: url('https://images.unsplash.com/photo-1525097487452-6278ff080c31?q=80');
+    background-image: 
+        linear-gradient(135deg, rgba(15, 32, 39, 0.8) 0%, rgba(32, 58, 67, 0.7) 50%, rgba(44, 83, 100, 0.8) 100%),
+        url('https://images.unsplash.com/photo-1525097487452-6278ff080c31?q=80');
     min-height: 100vh;
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    filter: brightness(0.7);
+    position: relative;
+}
+
+.parallax-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(50, 255, 137, 0.1) 0%, transparent 50%);
+    animation: pulse 4s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
 }
 
 /* Glass efecto premium */
 .glass-card {
     backdrop-filter: blur(15px);
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
-    padding: 30px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border-radius: 25px;
+    padding: 40px;
     margin: 30px auto;
     width: 90%;
     max-width: 900px;
-    box-shadow: 0 0 30px rgb(255 255 255 / 0.08);
-    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255,255,255,0.18);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.glass-card:hover::before {
+    left: 100%;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 48px 0 rgba(31, 38, 135, 0.5);
 }
 
 /* -------------------------------------------
@@ -50,26 +131,40 @@ section { position: relative; }
     top: 30%;
     width: 100%;
     text-align: center;
+    z-index: 10;
 }
 
 .title-animated {
-    font-size: 55px;
-    font-weight: 800;
-    text-shadow: 0 0 15px #32ff89;
-    animation: glow 4s infinite ease-in-out;
+    font-size: 4rem;
+    font-weight: 900;
+    font-family: "Playfair Display", serif;
+    background: linear-gradient(135deg, #32ff89 0%, #1ec84d 50%, #32ff89 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease infinite, floatAnimation 3s ease-in-out infinite;
+    text-shadow: 0 0 30px rgba(50, 255, 137, 0.5);
+    letter-spacing: 3px;
 }
 
-@keyframes glow {
-    0% { text-shadow: 0 0 15px #32ff89; }
-    50% { text-shadow: 0 0 35px #32ff89; }
-    100% { text-shadow: 0 0 15px #32ff89; }
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes floatAnimation {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
 }
 
 .subtitle {
-    font-size: 22px;
-    margin-top: 10px;
+    font-size: 1.5rem;
+    margin-top: 20px;
     opacity: 0;
-    animation: fadeIn 2s forwards;
+    animation: fadeIn 2s 0.5s forwards;
+    font-weight: 300;
+    letter-spacing: 2px;
 }
 
 /* Fade-in animation */
@@ -92,17 +187,24 @@ section { position: relative; }
     transform: translateY(0);
 }
 
-/* -------------------------------------------
-   GALERÍA
---------------------------------------------*/
+/* GALERÍA */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 40px;
+}
+
 .gallery img {
     width: 100%;
-    border-radius: 20px;
-    transition: 0.4s;
+    border-radius: 25px;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 .gallery img:hover {
-    transform: translateY(-8px) scale(1.05);
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(50, 255, 137, 0.4);
 }
 
 /* -------------------------------------------
@@ -110,16 +212,44 @@ section { position: relative; }
 --------------------------------------------*/
 .btn {
     background: linear-gradient(135deg, #41ff76, #1ec84d);
-    padding: 18px 35px;
-    border-radius: 40px;
+    padding: 18px 40px;
+    border-radius: 50px;
     color: #000;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
     display: inline-block;
     margin: 10px;
-    transition: .3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(65, 255, 118, 0.4);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
-.btn:hover { transform: scale(1.07); }
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover { 
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(65, 255, 118, 0.6);
+}
+
+.btn:active {
+    transform: translateY(0) scale(1);
+}
 
 /* -------------------------------------------
    SECCIÓN REFERIDOS
@@ -178,18 +308,80 @@ section { position: relative; }
 
 /* FOOTER */
 footer {
-    padding: 40px;
+    padding: 50px;
     text-align: center;
-    background: #050505;
-    margin-top: 60px;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    margin-top: 80px;
+    border-top: 2px solid rgba(50, 255, 137, 0.3);
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+footer p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* INPUTS Y FORMS */
+input[type="text"],
+input[type="email"] {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+    outline: none;
+    border-color: #32ff89;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 15px rgba(50, 255, 137, 0.3);
+}
+
+/* Links */
+a {
+    transition: all 0.3s ease;
+}
+
+/* Scroll Animations */
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* -------------------------------------------
    OPTIMIZACIÓN MÓVIL
 --------------------------------------------*/
 @media (max-width: 768px) {
-    .title-animated { font-size: 42px; }
-    .subtitle { font-size: 18px; }
+    .title-animated { 
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+    }
+    .subtitle { 
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    .glass-card {
+        padding: 25px;
+    }
+    .btn {
+        padding: 15px 30px;
+        font-size: 0.9rem;
+    }
 }
 
 </style>
@@ -199,13 +391,15 @@ footer {
 <div class="parallax-bg"></div>
 
 <!-- HERO -->
-<div class="hero">
+<header class="hero">
     <h1 class="title-animated">VIDA A TIERRA</h1>
     <p class="subtitle">Relajación • Energía Natural • Bienestar</p>
-</div>
+</header>
+
+<main>
 
 <!-- VIDEO 1: Biocristales -->
-<div class="glass-card reveal">
+<section class="glass-card reveal">
   <h2>Presentación sobre Biocristales</h2>
   <div class="video-embed">
     <iframe src="https://www.youtube-nocookie.com/embed/6Hy1DKtkV-U"
@@ -215,10 +409,10 @@ footer {
       allowfullscreen>
     </iframe>
   </div>
-</div>
+</section>
 
 <!-- VIDEO 2: Conexión y Propósito -->
-<div class="glass-card reveal">
+<section class="glass-card reveal">
   <h2>Video Adicional: Conexión y Propósito</h2>
   <div class="video-embed">
     <iframe src="https://www.youtube-nocookie.com/embed/uHIX9dLhHes"
@@ -228,7 +422,7 @@ footer {
       allowfullscreen>
     </iframe>
   </div>
-</div>
+</section>
 
 <!-- CÓMO FUNCIONA VIDA A TIERRA -->
 <section class="glass-card reveal">
@@ -247,7 +441,7 @@ footer {
 <!-- GALERÍA -->
 <section class="reveal">
     <h2 style="text-align:center;">Productos Vida a Tierra</h2>
-    <div class="gallery" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:25px; padding:40px;">
+    <div class="gallery">
         <img src="https://i.ibb.co/hJZhJnwz/Gemini-Generated-Image-rtag9nrtag9nrtag.png" alt="Heating Pad Vida a Tierra">
         <img src="https://i.ibb.co/R854T22/Gemini-Generated-Image-lxc0ialxc0ialxc0.png" alt="Colchoneta Vida a Tierra">
         <img src="https://via.placeholder.com/500x350?text=Almohada+Bioenergética" alt="Almohada Vida a Tierra">
@@ -255,11 +449,11 @@ footer {
 </section>
 
 <!-- BOTONES -->
-<div style="text-align:center;" class="reveal">
+<section style="text-align:center;" class="reveal">
     <a class="btn" href="https://wa.link/emv45g" target="_blank">WhatsApp Directo</a>
     <a class="btn" href="https://t.me/" target="_blank">Unirme a Telegram</a>
     <a class="btn" href="#" target="_blank">Comprar con PayPal</a>
-</div>
+</section>
 
 <!-- PANEL DE REFERIDOS -->
 <section class="glass-card reveal">
@@ -285,8 +479,10 @@ footer {
     </div>
 </section>
 
+</main>
+
 <footer>
-    © 2025 Vida a Tierra – Conexión Natural, Bienestar y Abundancia.
+    <p>© 2025 Vida a Tierra – Conexión Natural, Bienestar y Abundancia.</p>
 </footer>
 
 <script>
