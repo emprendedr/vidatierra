@@ -89,38 +89,6 @@
             color: white;
         }
         
-        .btn-testimonios {
-            background: linear-gradient(135deg, #9B5DE5, #F15BB5);
-            color: white;
-            font-size: 1.3rem;
-            padding: 18px 45px;
-            animation: pulseTestimonios 2s infinite;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .btn-testimonios::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: 0.5s;
-            z-index: -1;
-        }
-        
-        .btn-testimonios:hover::before {
-            left: 100%;
-        }
-        
-        .btn-testimonios:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 10px 30px rgba(155, 93, 229, 0.5);
-        }
-        
         .btn-container {
             display: flex;
             justify-content: center;
@@ -207,12 +175,6 @@
             margin-top: 20px;
         }
         
-        .testimonios-section {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            padding: 50px 0;
-            text-align: center;
-        }
-        
         footer {
             background: linear-gradient(135deg, #111317, #0a0b0e);
             color: white;
@@ -240,18 +202,6 @@
             to {
                 opacity: 1;
                 transform: translateY(0);
-            }
-        }
-        
-        @keyframes pulseTestimonios {
-            0% {
-                box-shadow: 0 0 0 0 rgba(155, 93, 229, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 15px rgba(155, 93, 229, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(155, 93, 229, 0);
             }
         }
         
@@ -337,21 +287,6 @@
                 </div>
                 <p class="video-description">Lupus y tiroidismo se le desaparecen.</p>
             </div>
-            
-            <!-- Sección de Testimonios con Botón Animado -->
-            <section class="testimonios-section">
-                <div class="container">
-                    <h2 class="section-title animate-on-scroll">¿Quieres ver más testimonios?</h2>
-                    <p class="animate-on-scroll" style="font-size: 1.2rem; margin-bottom: 30px;">
-                        Descubre más historias reales de personas que han transformado su salud con nuestros productos
-                    </p>
-                    <div class="btn-container animate-on-scroll">
-                        <a href="https://sleepmpro.vercel.app" class="btn btn-testimonios" target="_blank">
-                            <i class="fas fa-play-circle"></i> VER MÁS TESTIMONIOS
-                        </a>
-                    </div>
-                </div>
-            </section>
             
             <!-- Testimonio 4 -->
             <div class="video-testimonial animate-on-scroll">
