@@ -1,316 +1,955 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vida a Tierra - Bienestar & Oportunidad</title>
-
-<style>
-/* -------------------------------------------
-   ESTILOS GLOBALES 
---------------------------------------------*/
-body {
-    margin: 0;
-    font-family: "Poppins", sans-serif;
-    background: #0b0c10;
-    color: #fff;
-    overflow-x: hidden;
-}
-
-section { position: relative; }
-
-/* PARALLAX */
-.parallax-bg {
-    background-image: url('https://images.unsplash.com/photo-1525097487452-6278ff080c31?q=80');
-    min-height: 100vh;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    filter: brightness(0.7);
-}
-
-/* Glass efecto premium */
-.glass-card {
-    backdrop-filter: blur(15px);
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
-    padding: 30px;
-    margin: 30px auto;
-    width: 90%;
-    max-width: 900px;
-    box-shadow: 0 0 30px rgb(255 255 255 / 0.08);
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-/* -------------------------------------------
-   HERO
---------------------------------------------*/
-.hero {
-    position: absolute;
-    top: 30%;
-    width: 100%;
-    text-align: center;
-}
-
-.title-animated {
-    font-size: 55px;
-    font-weight: 800;
-    text-shadow: 0 0 15px #32ff89;
-    animation: glow 4s infinite ease-in-out;
-}
-
-@keyframes glow {
-    0% { text-shadow: 0 0 15px #32ff89; }
-    50% { text-shadow: 0 0 35px #32ff89; }
-    100% { text-shadow: 0 0 15px #32ff89; }
-}
-
-.subtitle {
-    font-size: 22px;
-    margin-top: 10px;
-    opacity: 0;
-    animation: fadeIn 2s forwards;
-}
-
-/* Fade-in animation */
-@keyframes fadeIn {
-    from {opacity:0; transform:translateY(20px);}
-    to {opacity:1; transform:translateY(0);}
-}
-
-/* -------------------------------------------
-   REVEAL ANIMATIONS
---------------------------------------------*/
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all .9s ease-out;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* -------------------------------------------
-   GALERÍA
---------------------------------------------*/
-.gallery img {
-    width: 100%;
-    border-radius: 20px;
-    transition: 0.4s;
-}
-
-.gallery img:hover {
-    transform: translateY(-8px) scale(1.05);
-}
-
-/* -------------------------------------------
-   BOTONES
---------------------------------------------*/
-.btn {
-    background: linear-gradient(135deg, #41ff76, #1ec84d);
-    padding: 18px 35px;
-    border-radius: 40px;
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    margin: 10px;
-    transition: .3s;
-}
-.btn:hover { transform: scale(1.07); }
-
-/* -------------------------------------------
-   SECCIÓN REFERIDOS
---------------------------------------------*/
-.ref-panel {
-    max-width: 600px;
-    margin: auto;
-    text-align: center;
-}
-
-.ref-panel input {
-    width: 95%;
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 18px;
-    margin: 10px 0;
-    border: none;
-}
-
-.ref-panel button {
-    width: 95%;
-    padding: 15px;
-    background: #32ff84;
-    border: none;
-    border-radius: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.ref-result {
-    margin-top: 15px;
-    font-size: 18px;
-    word-break: break-all;
-    color: #9cffc8;
-}
-
-/* VIDEOS RESPONSIVOS */
-.video-embed {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 ratio */
-  height: 0;
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.4);
-  margin-top: 15px;
-}
-
-.video-embed iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* FOOTER */
-footer {
-    padding: 40px;
-    text-align: center;
-    background: #050505;
-    margin-top: 60px;
-}
-
-/* -------------------------------------------
-   OPTIMIZACIÓN MÓVIL
---------------------------------------------*/
-@media (max-width: 768px) {
-    .title-animated { font-size: 42px; }
-    .subtitle { font-size: 18px; }
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gana $50-$500 Diarios | VisionDgtal - Sistema Comprobado para Ingresos desde Casa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+    <!-- Meta tags para mejor conversión -->
+    <meta name="description" content="Sistema comprobado: Gana $50-$500 diarios recomendando sesiones de bienestar. Sin experiencia, desde casa. Más de 2,143 personas ya lo lograron.">
+    <meta name="keywords" content="ganar dinero, ingresos desde casa, bienestar, sueño, estrés, dolor, oportunidades 2024">
+    <!-- Facebook Pixel -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'YOUR_PIXEL_ID');
+        fbq('track', 'PageView');
+    </script>
+    <style>
+        /* Estilos existentes... */
+        
+        /* Nuevos estilos para el botón de testimonios */
+        .testimonios-btn-container {
+            text-align: center;
+            margin: 60px 0;
+            position: relative;
+        }
+        
+        .btn-testimonios {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--pink));
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            position: relative;
+            animation: pulse 2s infinite;
+            font-family: 'Montserrat', sans-serif;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-testimonios:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background: linear-gradient(135deg, var(--pink), var(--primary));
+        }
+        
+        .btn-testimonios i {
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+        
+        /* Estilos para la sección de testimonios expandida */
+        .testimonios-expandidos {
+            display: none;
+            background: linear-gradient(135deg, #f8f9fa, #eef2f5);
+            padding: 60px 0;
+            margin: 40px 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .testimonios-expandidos.active {
+            display: block;
+            animation: fadeIn 0.8s ease;
+        }
+        
+        .testimonios-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .testimonios-header h2 {
+            color: var(--dark);
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .testimonios-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .testimonios-grid-expandida {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .testimonial-item-expandida {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial-item-expandida::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--pink));
+        }
+        
+        .testimonial-item-expandida:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .testimonial-content {
+            margin-bottom: 20px;
+            font-style: italic;
+            line-height: 1.6;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--pink));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        .testimonial-info h4 {
+            margin: 0;
+            color: var(--dark);
+        }
+        
+        .testimonial-info p {
+            margin: 5px 0 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .testimonial-stars {
+            color: gold;
+            margin-top: 10px;
+        }
+        
+        .testimonios-cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Resto de estilos existentes... */
+        
+        /* Ajustes para responsividad */
+        @media (max-width: 768px) {
+            .btn-testimonios {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+            
+            .testimonios-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .testimonios-grid-expandida {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-
-<div class="parallax-bg"></div>
-
-<!-- HERO -->
-<div class="hero">
-    <h1 class="title-animated">VIDA A TIERRA</h1>
-    <p class="subtitle">Relajación • Energía Natural • Bienestar</p>
-</div>
-
-<!-- VIDEO 1: Biocristales -->
-<div class="glass-card reveal">
-  <h2>Presentación sobre Biocristales</h2>
-  <div class="video-embed">
-    <iframe src="https://www.youtube-nocookie.com/embed/6Hy1DKtkV-U"
-      title="Video Biocristales Vida a Tierra"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-  </div>
-</div>
-
-<!-- VIDEO 2: Conexión y Propósito -->
-<div class="glass-card reveal">
-  <h2>Video Adicional: Conexión y Propósito</h2>
-  <div class="video-embed">
-    <iframe src="https://www.youtube-nocookie.com/embed/uHIX9dLhHes"
-      title="Video Vida a Tierra Conexión"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-  </div>
-</div>
-
-<!-- CÓMO FUNCIONA VIDA A TIERRA -->
-<section class="glass-card reveal">
-    <h2>¿Cómo Funciona el Sistema Vida a Tierra?</h2>
-    <p>Vida a Tierra combina tecnología terapéutica con beneficios naturales del Grounding para ofrecer relajación profunda, alivio del dolor y mejora en el sueño.  
-    Además, nuestro sistema de referidos te permite ganar dinero de manera sencilla:</p>
-
-    <ul style="text-align:left; max-width:700px; margin:auto; font-size:20px; line-height:1.7;">
-        <li>1️⃣ Comparte tu enlace único.</li>
-        <li>2️⃣ La persona agenda su sesión de 45 minutos.</li>
-        <li>3️⃣ Tú ganas <strong>$50 o más por cada referencia confirmada</strong>.</li>
-        <li>4️⃣ Todo el proceso es automatizado.</li>
-    </ul>
-</section>
-
-<!-- GALERÍA -->
-<section class="reveal">
-    <h2 style="text-align:center;">Productos Vida a Tierra</h2>
-    <div class="gallery" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:25px; padding:40px;">
-        <img src="https://i.ibb.co/hJZhJnwz/Gemini-Generated-Image-rtag9nrtag9nrtag.png" alt="Heating Pad Vida a Tierra">
-        <img src="https://i.ibb.co/R854T22/Gemini-Generated-Image-lxc0ialxc0ialxc0.png" alt="Colchoneta Vida a Tierra">
-        <img src="https://via.placeholder.com/500x350?text=Almohada+Bioenergética" alt="Almohada Vida a Tierra">
+    <!-- Chatbot -->
+    <div class="chatbot-toggle" id="chatbotToggle">
+        <i class="fas fa-robot"></i>
     </div>
-</section>
-
-<!-- BOTONES -->
-<div style="text-align:center;" class="reveal">
-    <a class="btn" href="https://wa.link/emv45g" target="_blank">WhatsApp Directo</a>
-    <a class="btn" href="https://t.me/" target="_blank">Unirme a Telegram</a>
-    <a class="btn" href="#" target="_blank">Comprar con PayPal</a>
-</div>
-
-<!-- PANEL DE REFERIDOS -->
-<section class="glass-card reveal">
-    <h2>Generador de Enlace de Referido</h2>
-    <p>Ingresa tu nombre o ID para crear tu enlace personal y empezar a generar ingresos.</p>
-
-    <div class="ref-panel">
-        <input id="refInput" type="text" placeholder="Escribe tu ID o Nombre">
-        <button onclick="generarRef()">Generar mi Enlace</button>
-        <div id="refResult" class="ref-result"></div>
+    
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-header">
+            <h3>Asistente Virtual</h3>
+            <button class="chatbot-close" id="chatbotClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="message bot-message">
+                ¡Hola! Soy tu asistente virtual. Estoy aquí para responder tus preguntas sobre nuestro sistema de ingresos. ¿En qué puedo ayudarte?
+                
+                <div class="quick-questions">
+                    <div class="quick-question" data-question="¿Realmente funciona sin experiencia?">¿Realmente funciona sin experiencia?</div>
+                    <div class="quick-question" data-question="¿Cuándo empiezo a ganar dinero?">¿Cuándo empiezo a ganar dinero?</div>
+                    <div class="quick-question" data-question="¿Cómo me convierto en Miembro Pro?">¿Cómo me convierto en Miembro Pro?</div>
+                    <div class="quick-question" data-question="¿Qué productos de Sleepm pagan más?">¿Qué productos de Sleepm pagan más?</div>
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbotInput" placeholder="Escribe tu pregunta...">
+            <button id="chatbotSend">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
     </div>
-</section>
 
-<!-- MEMBRESÍA -->
-<section class="glass-card reveal">
-    <h2>Únete a la Comunidad Vida a Tierra</h2>
-    <p>Recibe guías exclusivas, sesiones privadas y nuevas oportunidades de crecimiento.</p>
+    <!-- Chat flotante de WhatsApp -->
+    <a href="https://wa.me/+13232850508?text=Hola,%20quiero%20más%20información%20sobre%20VisionDgtal" 
+       class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-    <div class="ref-panel">
-        <input type="text" placeholder="Tu nombre completo">
-        <input type="email" placeholder="Tu correo electrónico">
-        <button>Registrarme</button>
+    <!-- Imagen superior -->
+    <div class="container">
+        <div class="image-container animate-on-scroll">
+            <img src="https://i.postimg.cc/QCpr58PS/Gemini-Generated-Image-rtag9nrtag9nrtag.png" alt="VisionDgtal - Sistema Comprobado para Generar Ingresos">
+        </div>
     </div>
-</section>
+    
+    <!-- Cabecera -->
+    <header>
+        <div class="container">
+            <h1>Descubre Cómo Personas Como Tú Ya Están Ganando $50-$500 Diarios Desde Casa</h1>
+            <p>Sistema 100% comprobado. Sin experiencia necesaria. Comienza a generar ingresos desde el primer día.</p>
+            
+            <!-- Pruebas Sociales Inmediatas -->
+            <div class="social-proof-section animate-on-scroll">
+                <div class="social-proof-numbers">
+                    <div class="proof-item">
+                        <span class="proof-number">2,143+</span>
+                        <span class="proof-label">Personas Unidas</span>
+                    </div>
+                    <div class="proof-item">
+                        <span class="proof-number">4.9/5</span>
+                        <span class="proof-label">Rating</span>
+                    </div>
+                    <div class="proof-item">
+                        <span class="proof-number">$387k+</span>
+                        <span class="proof-label">En Pagos</span>
+                    </div>
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span style="margin-left: 10px; font-weight: bold;">386 reseñas verificadas</span>
+                </div>
+            </div>
+            
+            <a href="#unete" class="btn btn-urgency">
+                <i class="fas fa-fire"></i> ¡QUIERO COMENZAR! - ÚLTIMOS CUPOS
+            </a>
+        </div>
+    </header>
+    
+    <!-- Video de oportunidad -->
+    <section>
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Cómo Personas Normales Logran Ingresos Extraordinarios</h2>
+            <div class="video-container animate-on-scroll">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/4L9zrXHY3sA" title="Sistema Comprobado: De $0 a $500 Diarios" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <h3 style="text-align: center; color: var(--dark);">No necesitas inventar la rueda: es simplemente apalancarte de empresas, sistemas y un equipo de apoyo para hacer el trabajo y generar ingresos</h3>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Caso de Éxito Destacado -->
+    <div class="container">
+        <div class="success-story animate-on-scroll">
+            <h3 style="margin-bottom: 20px;">"De Operador de Montacargas a $3,200/mes Trabajando desde Casa"</h3>
+            <p style="font-size: 1.2rem; margin-bottom: 20px;">"Tuve que dejar mis dos trabajos porque mi esposa se enfermó y necesitaba cuidarla, además de atender a mis dos hijos. Hoy gano más que antes, tengo libertad de horarios y puedo ayudar a otros a sentirse mejor. Este sistema cambió mi vida."</p>
+            <p style="font-style: italic; font-weight: bold;">- Edward Hernández, 37 años, Estados Unidos</p>
+        </div>
+    </div>
+    
+    <!-- Nueva Sección de Oportunidad de Prosperidad -->
+    <section class="opportunity-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Tu Vida Puede Cambiar en 30 Días</h2>
+            <div class="opportunity-content animate-on-scroll">
+                <p>Imagina despertarte cada mañana sabiendo que tienes un sistema que genera ingresos automáticamente, mientras ayudas a otros a mejorar su calidad de vida.</p>
+                
+                <!-- Beneficio Emocional -->
+                <div class="emotional-benefit animate-on-scroll">
+                    <h4 style="color: var(--primary); margin-bottom: 15px;">¿Cansado de depender de un solo ingreso?</h4>
+                    <p>Este sistema te da la libertad financiera que buscas. Sin jefes, sin horarios, desde cualquier lugar del mundo.</p>
+                </div>
+                
+                <p class="opportunity-highlight">Miles de personas ya descubrieron el secreto: recomendar productos de bienestar que la gente necesita y quiere.</p>
+                
+                <p>No necesitas ser vendedor. Solo compartir tu experiencia y conectar personas con soluciones que realmente funcionan.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- NUEVO BOTÓN DE TESTIMONIOS -->
+    <div class="container">
+        <div class="testimonios-btn-container animate-on-scroll">
+            <button class="btn-testimonios" id="btnTestimonios">
+                <i class="fas fa-comments"></i> VER MÁS TESTIMONIOS DE ÉXITO
+            </button>
+        </div>
+    </div>
+    
+    <!-- NUEVA SECCIÓN DE TESTIMONIOS EXPANDIDA -->
+    <div class="testimonios-expandidos" id="testimoniosExpandidos">
+        <div class="container">
+            <div class="testimonios-header">
+                <h2>Historias Reales de Personas Reales</h2>
+                <p>Descubre cómo personas como tú han transformado sus vidas con nuestro sistema</p>
+            </div>
+            
+            <div class="testimonios-grid-expandida">
+                <div class="testimonial-item-expandida animate-on-scroll">
+                    <div class="testimonial-content">
+                        "Estaba trabajando 12 horas al día en una fábrica y apenas llegaba a fin de mes. En mi primer mes con VisionDgtal gané $1,850 trabajando desde casa unas 2-3 horas al día. Ahora tengo tiempo para mi familia y mi salud."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MJ</div>
+                        <div class="testimonial-info">
+                            <h4>María José</h4>
+                            <p>Madre soltera, 32 años</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item-expandida animate-on-scroll">
+                    <div class="testimonial-content">
+                        "Perdí mi trabajo durante la pandemia y estaba desesperado. Encontré VisionDgtal y en 3 meses ya estaba ganando más de lo que ganaba en mi antiguo empleo. Lo mejor es que puedo trabajar desde cualquier lugar."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">CR</div>
+                        <div class="testimonial-info">
+                            <h4>Carlos Rodríguez</h4>
+                            <p>Ex-restaurador, 45 años</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item-expandida animate-on-scroll">
+                    <div class="testimonial-content">
+                        "Como estudiante universitario, necesitaba ingresos flexibles. Con VisionDgtal pude pagar mis estudios y hasta ayudar a mis padres. En mis mejores semanas he ganado hasta $700 trabajando entre clases."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AP</div>
+                        <div class="testimonial-info">
+                            <h4>Ana Patricia</h4>
+                            <p>Estudiante universitaria, 21 años</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item-expandida animate-on-scroll">
+                    <div class="testimonial-content">
+                        "Después de la jubilación, necesitaba ingresos extras. A mis 63 años pensé que sería difícil adaptarme a la tecnología, pero el sistema es tan sencillo que hasta yo pude hacerlo. Ahora tengo un ingreso estable sin salir de casa."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">RM</div>
+                        <div class="testimonial-info">
+                            <h4>Roberto Martínez</h4>
+                            <p>Jubilado, 63 años</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item-expandida animate-on-scroll">
+                    <div class="testimonial-content">
+                        "Trabajaba como enfermera y el estrés era insoportable. Con VisionDgtal reduje mis horas en el hospital y ahora gano casi lo mismo trabajando desde casa. Mi calidad de vida ha mejorado enormemente."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">LG</div>
+                        <div class="testimonial-info">
+                            <h4>Laura González</h4>
+                            <p>Enfermera, 38 años</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item-expandida animate-on-scroll">
+                    <div class="testimonial-content">
+                        "Empecé con escepticismo, pero después de mi primera ganancia de $50 en menos de 24 horas, me di cuenta de que esto era real. En 6 meses he construido un ingreso residual que me da tranquilidad financiera."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JS</div>
+                        <div class="testimonial-info">
+                            <h4>Javier Sánchez</h4>
+                            <p>Emprendedor, 41 años</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonios-cta">
+                <a href="#unete" class="btn btn-urgency">
+                    <i class="fas fa-rocket"></i> QUIERO SER LA SIGUIENTE HISTORIA DE ÉXITO
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Nueva Garantía de Transformación -->
+    <div class="container">
+        <div class="new-guarantee-section animate-on-scroll">
+            <h3><i class="fas fa-shield-alt"></i> Garantía de 30 Días "Sin Riesgo"</h3>
+            
+            <p>Durante los primeros 30 días, si sientes que no estás avanzando como deseas, no ofrecemos reembolsos, porque desde el primer día recibes acceso completo a herramientas, mentoría, sistemas y recursos digitales de alto valor que no se pueden "devolver".</p>
+            
+            <h4>Pero aquí está lo importante:</h4>
+            <p>Si no obtienes los resultados esperados, te abriremos nuevas puertas, ya sea con:</p>
+            
+            <ul class="benefit-list">
+                <li>Acceso a entrenamientos adicionales</li>
+                <li>Actualizaciones exclusivas del sistema</li>
+                <li>Nuevas estrategias personalizadas para tu caso</li>
+                <li>Mentoría extendida para guiarte paso a paso</li>
+                <li>Recursos premium que normalmente tienen un costo extra</li>
+            </ul>
+            
+            <p>Es decir, no pierdes dinero... ganas más apoyo, más conocimiento y más oportunidades para lograr tu meta.</p>
+            
+            <h4>Nuestra misión es simple:</h4>
+            <p>Que tengas un mejor porvenir, incluso si tu inicio es más lento de lo esperado.</p>
+        </div>
+    </div>
+    
+    <!-- Sección de Miembro Pro y Productos Sleepm -->
+    <section class="pro-membership-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Descubre el Poder del <span style="color: var(--pink);">Miembro Pro</span></h2>
+            
+            <div class="commission-highlight animate-on-scroll">
+                <h3>¡Oportunidad Limitada de Fin de Año!</h3>
+                <p>No solo ganas $50 por sesiones de 45 minutos de relajación, sino que también recibes recompensas cuando tus clientes compran productos Sleepm</p>
+                <div class="commission-amount">¡HASTA $800 POR VENTA!</div>
+                <p>Imagina cuánto podrías estar dejando en la mesa si no aprovechas esta oportunidad</p>
+            </div>
+            
+            <div class="pro-benefits">
+                <div class="pro-benefit-item animate-on-scroll">
+                    <div class="pro-benefit-icon">💎</div>
+                    <h3>Conviértete en Miembro Pro</h3>
+                    <p>Se activa comprando cualquier producto Sleepm como una colchoneta o heating pad</p>
+                    <p>Accede a comisiones exclusivas y mayores ingresos</p>
+                </div>
+                
+                <div class="pro-benefit-item animate-on-scroll">
+                    <div class="pro-benefit-icon">💰</div>
+                    <h3>Ganancias Exponenciales</h3>
+                    <p>Combina ingresos por sesiones de relajación + comisiones por productos</p>
+                    <p>Maximiza tu potencial de ingresos con múltiples fuentes</p>
+                </div>
+                
+                <div class="pro-benefit-item animate-on-scroll">
+                    <div class="pro-benefit-icon">🌟</div>
+                    <h3>Beneficios para Tus Clientes</h3>
+                    <p>Ayúdalos a mejorar su estado de ánimo, aliviar el dolor, dormir mejor y reducir el estrés</p>
+                    <p>Productos que realmente transforman vidas</p>
+                </div>
+            </div>
+            
+            <div class="global-benefit animate-on-scroll">
+                <h3><i class="fas fa-globe-americas"></i> ¡Gana Comisiones Desde Cualquier Parte del Mundo!</h3>
+                <p style="font-size: 1.2rem; margin-top: 15px;">
+                    Cuando eres Miembro Pro, ganas comisiones de <strong>CUALQUIER producto</strong> que el cliente compre, 
+                    desde <strong>CUALQUIER parte del mundo</strong> que el cliente ordene en línea.
+                </p>
+                <p style="font-size: 1.1rem; margin-top: 15px; font-weight: bold;">
+                    ¡Tu potencial de ingresos es literalmente global!
+                </p>
+            </div>
+            
+            <h3 class="section-title animate-on-scroll" style="margin-top: 60px;">Productos Sleepm con Grandes Comisiones</h3>
+            
+            <div class="product-showcase">
+                <div class="product-item animate-on-scroll">
+                    <div class="product-icon">🔥</div>
+                    <div class="promo-badge">PROMOCIÓN FIN DE AÑO</div>
+                    <h4>Heating Pad</h4>
+                    <p>Alivia dolores musculares y mejora la circulación</p>
+                    <div class="product-price">$280 - $600</div>
+                    <p style="font-size: 0.9rem; color: #666;">Comisión por unidad</p>
+                </div>
+                
+                <div class="product-item animate-on-scroll">
+                    <div class="product-icon">🛏️</div>
+                    <div class="promo-badge">OFERTA ESPECIAL</div>
+                    <h4>Colchoneta Sleepm</h4>
+                    <p>Mejora la calidad del sueño y alivia puntos de presión</p>
+                    <div class="product-price">$90 - $800</div>
+                    <p style="font-size: 0.9rem; color: #666;">Comisión por unidad</p>
+                    <p style="font-size: 0.8rem; color: #e74c3c; margin-top: 10px; font-weight: bold;">
+                        ¡Precio especial por tiempo limitado!
+                    </p>
+                </div>
+            </div>
+            
+            <div class="btn-container animate-on-scroll" style="margin-top: 40px;">
+                <a href="https://chat.whatsapp.com/I5BmSPnEkhCArcUeOXIDxR?mode=hqrt1" 
+                   target="_blank" class="btn btn-whatsapp" style="font-size: 1.2rem;">
+                    <i class="fab fa-whatsapp"></i> ÚNETE A LA COMUNIDAD PARA LA PRESENTACIÓN PRO
+                </a>
+            </div>
+            
+            <p style="text-align: center; margin-top: 20px; font-size: 1.1rem;" class="animate-on-scroll">
+                Descubre todos los detalles sobre cómo convertirte en Miembro Pro y maximizar tus ingresos
+            </p>
+        </div>
+    </section>
+    
+    <!-- Contador de Oferta por Tiempo Limitado -->
+    <section class="countdown-section">
+        <div class="container">
+            <div class="countdown-container animate-on-scroll">
+                <h2 class="countdown-title">¡ATENCIÓN: OFERTA TERMINA PRONTO!</h2>
+                <p class="countdown-subtitle">Solo los primeros 50 inscritos obtienen el precio especial de $50</p>
+                
+                <!-- Urgencia -->
+                <div class="urgency-section">
+                    <h4 style="color: #e74c3c; margin-bottom: 10px;">
+                        <i class="fas fa-exclamation-triangle"></i> SOLO 7 CUPOS DISPONIBLES
+                    </h4>
+                    <p>Más de 43 personas se han inscrito en las últimas 24 horas</p>
+                </div>
+                
+                <div class="countdown-timer">
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="days">00</div>
+                        <div class="countdown-label">Días</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="hours">00</div>
+                        <div class="countdown-label">Horas</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="minutes">00</div>
+                        <div class="countdown-label">Minutos</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="seconds">00</div>
+                        <div class="countdown-label">Segundos</div>
+                    </div>
+                </div>
+                
+                <div class="price-comparison">
+                    <div class="price-item price-current">
+                        <div class="price-amount">$50</div>
+                        <div class="price-description">PRECIO ESPECIAL</div>
+                        <div class="price-description">¡Solo Hoy!</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-amount">$100</div>
+                        <div class="price-description">PRECIO NORMAL</div>
+                        <div class="price-description">A partir de mañana</div>
+                    </div>
+                </div>
+                
+                <a href="#unete" class="btn btn-urgency">
+                    <i class="fas fa-bolt"></i> OBTENER ACCESO POR $50
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Cómo funciona -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Así de Simple es Comenzar</h2>
+            <div class="benefits">
+                <div class="benefit-item animate-on-scroll">
+                    <div class="benefit-icon">🚀</div>
+                    <h3>Te Registras</h3>
+                    <p>Acceso inmediato al sistema por solo $50 (oferta limitada)</p>
+                </div>
+                <div class="benefit-item animate-on-scroll">
+                    <div class="benefit-icon">📱</div>
+                    <h3>Compartes</h3>
+                    <p>Recomiendas sesiones a personas que necesitan bienestar</p>
+                </div>
+                <div class="benefit-item animate-on-scroll">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Ganas</h3>
+                    <p>$50 instantáneos por cada sesión + ingresos residuales</p>
+                </div>
+                <div class="benefit-item animate-on-scroll">
+                    <div class="benefit-icon">🔄</div>
+                    <h3>Creces</h3>
+                    <p>El sistema se duplica automáticamente con el tiempo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonio de Ingresos -->
+    <div class="container">
+        <div class="testimonial-item animate-on-scroll" style="text-align: center; background: linear-gradient(135deg, #667eea, #764ba2); color: white;">
+            <h3 style="margin-bottom: 15px;">"Generé $2,350 en mi primer mes"</h3>
+            <p style="font-size: 1.1rem;">"Solo recomendando a amigos y familiares. Ahora tengo un ingreso estable que me permite trabajar desde casa y ver crecer a mis hijos."</p>
+            <p style="font-weight: bold; margin-top: 15px;">- Carlos M., 28 años, México</p>
+        </div>
+    </div>
+    
+    <!-- Imagen a la mitad -->
+    <div class="container">
+        <div class="image-container animate-on-scroll">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Persona disfrutando libertad financiera">
+        </div>
+    </div>
+    
+    <!-- Testimonios -->
+    <section>
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Ellos Lo Lograron, Tú También Puedes</h2>
+            <div class="testimonials-grid">
+                <!-- Testimonios existentes... -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Preguntas Frecuentes -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Preguntas Frecuentes</h2>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item animate-on-scroll">
+                    <h4 class="faq-question">¿Realmente funciona sin experiencia?</h4>
+                    <p>Sí, el sistema está diseñado para principiantes. Te proporcionamos plantillas, guías y soporte completo.</p>
+                </div>
+                <div class="faq-item animate-on-scroll">
+                    <h4 class="faq-question">¿Cuándo empiezo a ganar dinero?</h4>
+                    <p>Desde el primer día. Muchos miembros reportan su primera ganancia de $50 en las primeras 24 horas.</p>
+                </div>
+                <div class="faq-item animate-on-scroll">
+                    <h4 class="faq-question">¿Necesito invertir más dinero?</h4>
+                    <p>No, los $50 son tu única inversión. Todo lo demás está incluido.</p>
+                </div>
+                <div class="faq-item animate-on-scroll">
+                    <h4 class="faq-question">¿Es seguro el pago con Stripe?</h4>
+                    <p>Totalmente. Stripe es una de las plataformas de pago más seguras del mundo, utilizada por millones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sección Final de Acción -->
+    <section id="unete" style="background: linear-gradient(135deg, var(--secondary), var(--purple)); color: white;">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll" style="color: white;">Tu Futuro Mejor Comienza Ahora</h2>
+            
+            <!-- Garantía Final -->
+            <div class="new-guarantee-section" style="background: rgba(255,255,255,0.9); margin: 30px 0;">
+                <h3 style="color: #1565c0; margin-bottom: 15px;">
+                    <i class="fas fa-lock"></i> Compra 100% Segura
+                </h3>
+                <p style="color: #333;">Protegido por nuestra Garantía de 30 Días "Sin Riesgo". Tu inversión está segura y te aseguramos más oportunidades de crecimiento.</p>
+            </div>
+            
+            <!-- Botones de Acción -->
+            <div class="btn-container animate-on-scroll">
+                <a href="https://wa.me/+13232850508?text=Hola,%20quiero%20más%20información%20sobre%20VisionDgtal" 
+                   target="_blank" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+                </a>
+                
+                <a href="https://chat.whatsapp.com/I5BmSPnEkhCArcUeOXIDxR?mode=hqrt1" 
+                   target="_blank" class="btn" style="background: var(--pink); color: white;">
+                    <i class="fab fa-whatsapp"></i> Comunidad Miembro Pro
+                </a>
+            </div>
+            
+            <!-- Botón de Stripe -->
+            <div class="stripe-container animate-on-scroll">
+                <stripe-buy-button
+                    buy-button-id="buy_btn_1SXPuNHtIyCDK5r5LaEVPQcw"
+                    publishable-key="pk_live_51SRvAnHtIyCDK5r531D806mnf4DRJEKxtv664csS4Fg5I8GCrHVJdF1bD5obh1bRNTiei1Y2fcawXkOjiyZ8HVS000VwZsUy5r"
+                >
+                </stripe-buy-button>
+            </div>
+            
+            <!-- Urgencia Final -->
+            <div class="urgency-section animate-on-scroll" style="background: rgba(255,255,255,0.2); border: 2px solid white;">
+                <h4 style="margin-bottom: 10px;">
+                    <i class="fas fa-clock"></i> OFERTA TERMINA EN:
+                </h4>
+                <div style="font-size: 1.5rem; font-weight: bold;" id="final-countdown">00:30:00</div>
+                <p style="margin-top: 10px;">Precio sube a $100 después</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>© 2024 VisionDgtal. Todos los derechos reservados.</p>
+            <p style="margin-top: 10px; opacity: 0.8;">Transformando vidas a través del bienestar y la libertad financiera</p>
+        </div>
+    </footer>
 
-<footer>
-    © 2025 Vida a Tierra – Conexión Natural, Bienestar y Abundancia.
-</footer>
-
-<script>
-/* REVEAL ANIMATIONS */
-window.addEventListener("scroll", reveal);
-function reveal() {
-    let reveals = document.querySelectorAll(".reveal");
-    for (let r of reveals) {
-        let windowHeight = window.innerHeight;
-        let elementTop = r.getBoundingClientRect().top;
-        if (elementTop < windowHeight - 100) r.classList.add("active");
-    }
-}
-
-/* GENERADOR DE REFERIDOS */
-function generarRef() {
-    const val = document.getElementById("refInput").value.trim();
-    if (!val) return alert("Escribe tu ID o Nombre.");
-
-    const enlace = `https://vidaatierrabienestar.com/ref/${encodeURIComponent(val)}`;
-    document.getElementById("refResult").innerHTML =
-        `Tu enlace de referido es:<br><strong>${enlace}</strong>`;
-}
-</script>
-
+    <script>
+        // Contador regresivo
+        function updateCountdown() {
+            const now = new Date();
+            const target = new Date();
+            target.setDate(now.getDate() + 1);
+            target.setHours(23, 59, 59, 999);
+            
+            const difference = target - now;
+            
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            
+            // Contador final más rápido
+            const finalHours = Math.floor(difference / (1000 * 60 * 60));
+            const finalMinutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const finalSeconds = Math.floor((difference % (1000 * 60)) / 1000);
+            document.getElementById('final-countdown').textContent = 
+                `${finalHours.toString().padStart(2, '0')}:${finalMinutes.toString().padStart(2, '0')}:${finalSeconds.toString().padStart(2, '0')}`;
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Animación al hacer scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Tracking de clicks
+            document.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function() {
+                    if (typeof fbq !== 'undefined') {
+                        fbq('track', 'Lead');
+                    }
+                });
+            });
+        });
+        
+        // Funcionalidad del Chatbot
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatbotToggle = document.getElementById('chatbotToggle');
+            const chatbotContainer = document.getElementById('chatbotContainer');
+            const chatbotClose = document.getElementById('chatbotClose');
+            const chatbotMessages = document.getElementById('chatbotMessages');
+            const chatbotInput = document.getElementById('chatbotInput');
+            const chatbotSend = document.getElementById('chatbotSend');
+            const quickQuestions = document.querySelectorAll('.quick-question');
+            
+            // Base de conocimiento del chatbot
+            const knowledgeBase = {
+                "hola": "¡Hola! Soy tu asistente virtual. Estoy aquí para responder tus preguntas sobre nuestro sistema de ingresos. ¿En qué puedo ayudarte?",
+                "funciona sin experiencia": "Sí, el sistema está diseñado específicamente para principiantes. Te proporcionamos plantillas, guías paso a paso y soporte completo para que puedas empezar sin problemas.",
+                "cuándo empiezo a ganar dinero": "Desde el primer día. Muchos miembros reportan su primera ganancia de $50 en las primeras 24 horas. El sistema está diseñado para que obtengas resultados inmediatos.",
+                "necesito invertir más dinero": "No, los $50 son tu única inversión. Todo lo demás está incluido: entrenamientos, herramientas, soporte y acceso a la comunidad.",
+                "qué incluye el sistema": "El sistema incluye: acceso completo a la plataforma, entrenamientos paso a paso, plantillas listas para usar, soporte personalizado, comunidad privada y actualizaciones gratuitas.",
+                "cómo funciona": "Es muy simple: 1) Te registras, 2) Compartes sesiones de bienestar, 3) Ganas $50 por cada sesión + ingresos residuales, 4) El sistema crece automáticamente.",
+                "es seguro": "Totalmente seguro. Utilizamos Stripe, una de las plataformas de pago más seguras del mundo. Además, tu información está protegida y no compartimos tus datos.",
+                "garantía": "Ofrecemos una Garantía de 30 Días 'Sin Riesgo'. Si no obtienes resultados, te damos más apoyo, entrenamientos adicionales y mentoría extendida en lugar de reembolsos.",
+                "precio": "El precio especial es de $50 (oferta limitada). Después de que se agoten los cupos, el precio subirá a $100.",
+                "tiempo": "Dedicando 1-2 horas al día puedes empezar a generar ingresos. El sistema está diseñado para adaptarse a tu horario.",
+                "miembro pro": "Para convertirte en Miembro Pro necesitas adquirir cualquier producto Sleepm como una colchoneta o heating pad. Esto te da acceso a comisiones más altas y beneficios exclusivos.",
+                "cómo me convierto en miembro pro": "Para convertirte en Miembro Pro necesitas adquirir cualquier producto Sleepm. Te recomiendo unirte a nuestra comunidad de WhatsApp para la presentación completa: https://chat.whatsapp.com/I5BmSPnEkhCArcUeOXIDxR?mode=hqrt1",
+                "productos sleepm": "Sleepm ofrece productos como heating pads (hasta $600 de comisión) y colchonetas (hasta $800 de comisión por tiempo limitado).",
+                "qué productos de sleepm pagan más": "Actualmente, la colchoneta Sleepm ofrece las comisiones más altas con hasta $800 por unidad durante esta promoción limitada. El heating pad también ofrece excelentes comisiones de hasta $600.",
+                "heating pad": "El Heating Pad de Sleepm es uno de nuestros productos estrella. Con la promoción de fin de año, puedes ganar hasta $600 por cada venta. Ayuda a aliviar dolores musculares y mejorar la circulación.",
+                "colchoneta": "La Colchoneta Sleepm actualmente tiene una promoción especial que paga hasta $800 por unidad. Es una oportunidad limitada para maximizar tus ganancias como Miembro Pro.",
+                "comisiones globales": "¡Como Miembro Pro, ganas comisiones de CUALQUIER producto que tus clientes compren, desde CUALQUIER parte del mundo donde ordenen en línea! Tu potencial de ingresos es verdaderamente global.",
+                "ayuda": "Puedes contactarnos por WhatsApp al +1 323 285 0508 o hacer preguntas específicas aquí en el chat. Estamos para ayudarte.",
+                "gracias": "¡De nada! ¿Tienes alguna otra pregunta? Estoy aquí para ayudarte.",
+                "adiós": "¡Fue un placer ayudarte! Si tienes más preguntas, no dudes en volver. ¡Éxito en tu camino hacia la libertad financiera!"
+            };
+            
+            // Función para encontrar la respuesta más relevante
+            function findAnswer(question) {
+                const lowerQuestion = question.toLowerCase();
+                
+                // Buscar coincidencias exactas primero
+                for (const key in knowledgeBase) {
+                    if (lowerQuestion.includes(key)) {
+                        return knowledgeBase[key];
+                    }
+                }
+                
+                // Respuesta por defecto si no encuentra coincidencia
+                return "Lo siento, no tengo información específica sobre eso. ¿Podrías reformular tu pregunta? También puedes contactarnos por WhatsApp para una respuesta más personalizada: https://wa.me/+13232850508 o unirte a la comunidad Miembro Pro: https://chat.whatsapp.com/I5BmSPnEkhCArcUeOXIDxR?mode=hqrt1";
+            }
+            
+            // Función para agregar mensaje al chat
+            function addMessage(text, isUser = false) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
+                messageDiv.textContent = text;
+                chatbotMessages.appendChild(messageDiv);
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            }
+            
+            // Función para procesar pregunta
+            function processQuestion(question) {
+                addMessage(question, true);
+                chatbotInput.value = '';
+                
+                // Simular "escribiendo..."
+                setTimeout(() => {
+                    const answer = findAnswer(question);
+                    addMessage(answer);
+                }, 1000);
+            }
+            
+            // Event listeners
+            chatbotToggle.addEventListener('click', function() {
+                chatbotContainer.style.display = 'flex';
+            });
+            
+            chatbotClose.addEventListener('click', function() {
+                chatbotContainer.style.display = 'none';
+            });
+            
+            chatbotSend.addEventListener('click', function() {
+                const question = chatbotInput.value.trim();
+                if (question) {
+                    processQuestion(question);
+                }
+            });
+            
+            chatbotInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    const question = chatbotInput.value.trim();
+                    if (question) {
+                        processQuestion(question);
+                    }
+                }
+            });
+            
+            // Preguntas rápidas
+            quickQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    processQuestion(this.getAttribute('data-question'));
+                });
+            });
+            
+            // NUEVO: Funcionalidad para el botón de testimonios
+            const btnTestimonios = document.getElementById('btnTestimonios');
+            const testimoniosExpandidos = document.getElementById('testimoniosExpandidos');
+            
+            btnTestimonios.addEventListener('click', function() {
+                testimoniosExpandidos.classList.toggle('active');
+                
+                // Cambiar el texto del botón
+                if (testimoniosExpandidos.classList.contains('active')) {
+                    btnTestimonios.innerHTML = '<i class="fas fa-times"></i> CERRAR TESTIMONIOS';
+                } else {
+                    btnTestimonios.innerHTML = '<i class="fas fa-comments"></i> VER MÁS TESTIMONIOS DE ÉXITO';
+                }
+                
+                // Desplazarse suavemente a la sección de testimonios
+                if (testimoniosExpandidos.classList.contains('active')) {
+                    testimoniosExpandidos.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
